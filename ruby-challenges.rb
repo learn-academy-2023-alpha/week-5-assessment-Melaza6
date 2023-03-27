@@ -73,12 +73,7 @@ class Bike
         @current_speed += num
     end
     def brake(num)
-        
-        while @current_speed -= num
-            if @current_speed == 0
-                break
-            end
-        end
+        @current_speed = [@current_speed - num, 0].max
     end
     def bike_info
         "The #{@model} bike has #{@wheels} wheels and is going #{@current_speed} mph."
